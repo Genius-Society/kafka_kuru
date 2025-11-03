@@ -14,5 +14,5 @@ Kafka GIF modified from | 卡芙卡 GIF 来源 : [BV1Fh4y197cX](https://www.bili
 The art the relevant copyright of Honkai: Star Rail belongs to miHoYo/HoYoverse.<br>
 角色版权归米哈游所有。
 
-## Original Inspration
+## Thanks
 Thanks website [Herta Kuru](https://github.com/duiqt/herta_kuru), where our inspirations and the super-original code from.
