@@ -1,6 +1,6 @@
 ﻿<h1>Kafka Kuru | 卡芙卡转圈圈 | カフカクルへ</h1>
 
-[![license](https://img.shields.io/badge/license-CC--BY--NC--SA-74c853.svg)](https://github.com/Genius-Society/kafka-kuru/blob/web/LICENSE)
+[![license](https://img.shields.io/badge/license-CC--BY--NC--SA-74c853.svg)](./LICENSE)
 [![cloudflare](https://img.shields.io/badge/cloudflare-kafka--kururin-f6821f.svg)](https://kafka-kururin.pages.dev)
 [![bili](https://img.shields.io/badge/bilibili-BV1aYrgYxEcZ-fc8bab.svg)](https://www.bilibili.com/video/BV1aYrgYxEcZ)
 
