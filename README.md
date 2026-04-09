@@ -2,6 +2,7 @@
 
 [![license](https://img.shields.io/badge/license-CC--BY--NC--SA-74c853.svg)](./LICENSE)
 [![cloudflare](https://img.shields.io/badge/cloudflare-kafka--kururin-f6821f.svg)](https://kafka-kururin.pages.dev)
+[![ms](https://img.shields.io/badge/modelscope-kafka__kuru-624aff.svg)](https://www.modelscope.cn/studios/Genius-Society/kafka_kuru)
 [![bili](https://img.shields.io/badge/bilibili-BV1aYrgYxEcZ-fc8bab.svg)](https://www.bilibili.com/video/BV1aYrgYxEcZ)
 
 <div align="center"><a href="https://kafka-kururin.pages.dev"><img src="./img/kafkaa_github.gif" style="width:82%;"></a></div>
