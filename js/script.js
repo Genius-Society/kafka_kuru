@@ -4,7 +4,7 @@ let CACHES = {
         texts: {
             "page-title": "卡芙卡转圈圈",
             "doc-title": "嘣~",
-            "page-descriptions": "给卡芙卡写的小网站，对，就是《崩坏：星穹铁道》星核猎手中<del>听取妈声一片</del>的坏女人！",
+            "page-descriptions": "给卡芙卡写的小网站，对，就是《崩坏：星穹铁道》星核猎手中 <del>听取妈声一片</del> 的坏女人！",
             "counter-descriptions": ["卡麻麻已经嘣~了", "卡芙卡已经转了"],
             "counter-unit": ["次", "次圈圈"],
             "counter-button": ["加载中...", "请稍候..."],
@@ -62,8 +62,8 @@ let CACHES = {
                 }
         });
         refreshDynamicTexts();
-        // sets the image of element with id "herta-card" to the translated version in the selected language.
-        document.getElementById("herta-card").src = curLang.cardImage;
+        // sets the image of element with id "kafka-card" to the translated version in the selected language.
+        document.getElementById("kafka-card").src = curLang.cardImage;
     };
 
     // function that returns the list of audio files for the selected language

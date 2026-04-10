@@ -187,7 +187,7 @@ h2 {
     justify-content: center;
 }
 
-#herta-card {
+#kafka-card {
     min-width: 256px;
     max-width: 720px;
     max-height: 300px;
@@ -199,7 +199,7 @@ h2 {
 }
 
 /* test,由vgwik添加 */
-#herta-card:hover {
+#kafka-card:hover {
     background-color: #ececec;
     transform: translate3d(-0.5px, -0.5px, 0px);
     transition: transform 0.3s ease;
