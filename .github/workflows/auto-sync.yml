@@ -1,0 +1,41 @@
+name: Sync Files from ModelScope
+
+on:
+  schedule:
+    - cron: "0 19 * * *" # 每天 UTC 时间 19:00 (北京时间 3:00~4:15) 触发一次
+  workflow_dispatch:
+    # 允许手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  sync-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: 检出当前仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: 下载文件并存储到仓库目录
+      - name: Download files from ModelScope
+        run: |
+          git clone https://www.modelscope.cn/studios/Genius-Society/kafka_kuru.git ms_repo
+          rm -rf ./ms_repo/.git
+          cp -rf ./ms_repo/. ./
+          rm -rf ms_repo
+
+      # Step 3: 比较文件是否发生变化
+      - name: Compare files and commit if different
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Files are different, committing changes..."
+            git config --global user.name "admin"
+            git config --global user.email "admin@noreply.com"
+            git add .
+            git commit -m "Auto sync at $(date +%Y-%m-%d)"
+            git push origin main
+          else
+            echo "Files are the same, no changes."
+          fi
