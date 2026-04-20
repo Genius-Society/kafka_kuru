@@ -6,7 +6,7 @@
 [![ms](https://img.shields.io/badge/modelscope-kafka__kuru-624aff.svg)](https://www.modelscope.cn/studios/Genius-Society/kafka_kuru)
 [![bili](https://img.shields.io/badge/bilibili-BV1aYrgYxEcZ-fc8bab.svg)](https://www.bilibili.com/video/BV1aYrgYxEcZ)
 
-<div align="center"><a href="https://kafka-kururin.pages.dev"><img src="./img/kafkaa_github.gif" style="width:82%;"></a></div>
+<div align="center"><a href="https://genius-society-kafka-kuru.ms.show"><img src="./img/kafkaa_github.gif" style="width:82%;"></a></div>
 
 <p align="center">The website for Mom Kafka, the bad woman Honkai: Star Rail character out there!<br>献给《崩坏：星穹铁道》的坏女人卡芙卡麻麻</p>
 
