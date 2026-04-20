@@ -1,8 +1,9 @@
-name: Sync Files from ModelScope
+name: auto-sync
 
 on:
-  schedule:
-    - cron: "0 19 * * *" # 每天 UTC 时间 19:00 (北京时间 3:00~4:15) 触发一次
+  push:
+    branches:
+      - main
   workflow_dispatch:
     # 允许手动触发
 
@@ -19,23 +20,25 @@ jobs:
         uses: actions/checkout@v4
 
       # Step 2: 下载文件并存储到仓库目录
-      - name: Download files from ModelScope
+      - name: Sync Files to ModelScope
+        env:
+          TOKEN: ${{ secrets.MS_TOKEN }}
+          NAME: ${{ secrets.GIT_NAME }}
+          EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          git clone https://www.modelscope.cn/studios/Genius-Society/kafka_kuru.git ms_repo
-          rm -rf ./ms_repo/.git
-          cp -rf ./ms_repo/. ./
-          rm -rf ms_repo
-
-      # Step 3: 比较文件是否发生变化
-      - name: Compare files and commit if different
-        run: |
+          git clone https://oauth2:$TOKEN@www.modelscope.cn/studios/Genius-Society/kafka_kuru.git ../ms_repo
+          mv -f ./.github/restart.py ../
+          rm -rf ./*.py ./*.txt ./LICENSE ./README.md ./.github ./.git ./.gitignore ./.gitattributes
+          cp -rf ../ms_repo/.git ./
           if [ -n "$(git status --porcelain)" ]; then
             echo "Files are different, committing changes..."
-            git config --global user.name "admin"
-            git config --global user.email "admin@noreply.com"
+            git config --global user.name "$NAME"
+            git config --global user.email "$EMAIL"
             git add .
             git commit -m "Auto sync at $(date +%Y-%m-%d)"
-            git push origin main
+            git push
+            pip install modelscope
+            python ../restart.py --token $TOKEN
           else
             echo "Files are the same, no changes."
           fi
