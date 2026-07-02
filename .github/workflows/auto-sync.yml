@@ -13,7 +13,6 @@ permissions:
 jobs:
   sync-file:
     runs-on: ubuntu-latest
-
     steps:
       # Step 1: 检出当前仓库代码
       - name: Checkout repository
@@ -36,7 +35,7 @@ jobs:
             git add .
             git commit -m "Auto sync at $(date +%Y-%m-%d)"
             git push
-            pip install modelscope
+            pip install modelscope==1.37.1
             python ../restart.py --token $TOKEN
           else
             echo "Files are the same, no changes."
